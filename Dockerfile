@@ -9,6 +9,7 @@ RUN pi update
 RUN curl -fsSL https://openclaw.ai/install.sh | bash
 
 COPY models.json /root/.pi/agent/models.json
+COPY openclaw.json /root/.openclaw/openclaw.json
 
 VOLUME /root/.pi/agent/sessions
 
