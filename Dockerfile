@@ -1,4 +1,5 @@
-FROM node:latest
+#FROM node:latest
+FROM pi-agent:latest
 
 RUN apt update; apt install -y vim curl wget unzip build-essential python3-dev
 RUN curl -fsSL https://bootstrap.pypa.io/get-pip.py | python3 - --break-system-packages
