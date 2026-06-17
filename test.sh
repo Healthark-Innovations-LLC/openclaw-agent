@@ -16,7 +16,6 @@ docker run --rm -it \
   -p 0.0.0.0:3002:3001 \
   -p 0.0.0.0:18789:18789 \
   --memory-reservation=2g \
-  -v "$(pwd)/openclaw.json":/root/.openclaw/openclaw.json \
   -v $image-agents:/root/.openclaw/agents \
   -v $image-gateway:/root/.openclaw/gateway \
   -v $image-workspace:/root/.openclaw/workspace \
@@ -25,3 +24,5 @@ docker run --rm -it \
   -v $image-pi:/root/.pi/agent/sessions \
   -v $image-ssh:/root/.ssh \
   $image "$@"
+
+#  -v "$(pwd)/openclaw.json":/root/.openclaw/openclaw.json \
