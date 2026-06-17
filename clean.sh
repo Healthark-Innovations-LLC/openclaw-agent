@@ -5,6 +5,8 @@ image="openclaw-agent"
 
 set -xe
 
+docker rm -f $image
+
 docker volume rm $image-agents
 docker volume rm $image-gateway
 docker volume rm $image-workspace
