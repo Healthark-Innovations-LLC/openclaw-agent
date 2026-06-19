@@ -2,8 +2,11 @@ FROM node:latest
 # FROM pi-agent:latest
 
 # docker-out-of-docker
-RUN apt update && apt install -y ca-certificates
-RUN apt-get update && apt-get install -y docker.io
+RUN apt update && \
+    apt install -y ca-certificates docker.io && \
+    apt clean -y && \
+    apt autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
 # install openclaw
 RUN curl -fsSL https://openclaw.ai/install.sh | bash

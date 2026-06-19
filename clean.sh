@@ -3,7 +3,7 @@
 
 image="openclaw-agent"
 
-set -xe
+set -x
 
 docker rm -f $image
 
