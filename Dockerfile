@@ -3,8 +3,9 @@ FROM node:latest
 
 # docker-out-of-docker
 RUN apt update && apt install -y ca-certificates
-COPY --from:docker:latest /usr/local/bin/docker /uar/local/bin/docker
+RUN apt-get update && apt-get install -y docker.io
 
+# install openclaw
 RUN curl -fsSL https://openclaw.ai/install.sh | bash
 
 COPY openclaw.json /root/.openclaw/openclaw.json
